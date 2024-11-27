@@ -1,22 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ProjectButton from './ProjectButton'
+import {ProjectButton} from './ProjectButton'
 import { useNavigate } from "react-router-dom";
 
 
-const ProjectColumn = (props) => {
-    // const [title,] = props;
+const ProjectColumn = () => {
     const navigate = useNavigate();
     return (
         <div className='' >
-            <div className='ml-1 mb-1'><h1 className='text-3xl'> {props.title}: </h1>
+            <div className='ml-1 mb-1'><h1 className='text-3xl'> Mini Projects: </h1>
                 <div className='h-[76vh] w-[49vw] pt-6 pl-7 flex flex-col flex-wrap gap-6  ' >
-                    {/* border-2 border-pink-500 */}
-                    {/* pt-5 pl-8 -pr-8 */}
-                    {/* <ProjectButton title='StopWatch' ><Link to='./Projects/stopwatch' /></ProjectButton>
-                    <button onClick={() => navigate("./Projects/Stopwatch")}>button</button>
-                    <ProjectButton title='StopWatch' onClick={() => navigate("./Projects/Stopwatch")} ></ProjectButton> */}
-
 
                     <Link className='w-52 ' to='./Projects/stopwatch'>
                         <ProjectButton title='StopWatch' /> 
@@ -30,8 +23,8 @@ const ProjectColumn = (props) => {
                         <ProjectButton title='Task Tracker' />
                     </Link>
 
-                    <Link className='w-52'  to='/x'>
-                        <ProjectButton title='X-X-X-X' />
+                    <Link className='w-52'  to='./Projects/qrcode'>
+                        <ProjectButton title='QR Generator' />
                     </Link>
 
                     <Link className='w-52 ' to='404'>
@@ -42,8 +35,8 @@ const ProjectColumn = (props) => {
                         <ProjectButton title='Forms #1' />
                     </Link>
 
-                    <Link className='w-52 ' to='#'>
-                        <ProjectButton title='Y-Y-Y-Y' />
+                    <Link className='w-52 ' to='./Projects/custom-scrollbar'>
+                        <ProjectButton title='Custom Scroll'/>
                     </Link>
 
                     <Link className='w-52' to='#'>
@@ -67,7 +60,7 @@ const ProjectColumn = (props) => {
                     </Link>
 
                     <Link className='w-52' to='#'>
-                        <ProjectButton title='Navbar' />
+                        <ProjectButton title='WoW... nice' />
                     </Link>
 
                     <Link className='w-52' to='#'>
