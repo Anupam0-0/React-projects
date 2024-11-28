@@ -15,10 +15,18 @@ import ToDoBoard from "./Projects/ToDoBoard/ToDoBoard.jsx";
 import Error404 from "./Components/Error404.jsx";
 import Forms from "./Projects/Forms.jsx";
 import QRCode from "./Projects/QrCode.jsx";
-import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
 import CustomScrollIndicator from "./Projects/CustomScrolling/CustomScrollIndicator.jsx";
 import Carousel from "./Projects/Carousel.jsx";
 import Accordion from "./Projects/Accordion.jsx";
+
+import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
+// import FoodRecipe from "./Intermediate/FoodRecipe/App.jsx";
+import Navbar from "./Intermediate/FoodRecipe/components/Navbar.jsx";
+import Home from "./Intermediate/FoodRecipe/pages/Home.jsx";
+import Favourites from "./Intermediate/FoodRecipe/pages/Favourites.jsx";
+import Details from "./Intermediate/FoodRecipe/pages/Details.jsx";
+import GlobalState from "./Intermediate/FoodRecipe/components/context.jsx";
+
 
 // const router = createBrowserRouter([
 //   createRoutesFromElements(
@@ -57,11 +65,6 @@ const router = createBrowserRouter([
         path: "qrcode",
         element: <QRCode />,
       },
-
-      {
-        path: "e-learning-site",
-        element: <ELearningSite />,
-      },
       {
         path: "custom-scrollbar",
         element: (
@@ -82,8 +85,29 @@ const router = createBrowserRouter([
   },
   {
     path: "/IntermediateProjects",
-    element: <Error404 />,
-    children: [],
+    // element: <Error404 />,
+    children: [
+      {
+        path: "e-learning-site",
+        element: <ELearningSite />,
+      },
+      {
+        path: "food-recipe",
+        // element: (<GlobalState> <Details /> </GlobalState>),
+        children: [
+          {
+            path: "",  element: (<><GlobalState> <Navbar /> <Home /> </GlobalState></>),
+          },
+          {
+            path: "favourites", element: (<GlobalState> <Favourites /> </GlobalState>),
+          },
+          {
+            path: "recipe-item/:id", element: (<GlobalState> <Details /> </GlobalState>),
+          }
+        ]
+        
+      }
+    ],
   },
 ]);
 
