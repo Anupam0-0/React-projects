@@ -1,7 +1,7 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import ErrorPage from './Error-page.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import ErrorPage from "./Error-page.jsx";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -10,23 +10,23 @@ import {
 } from "react-router-dom";
 
 // //Files elements are imported from the src folder
-import Stopwatch from './Projects/StopWatch.jsx'
-import ToDoBoard from './Projects/ToDoBoard/ToDoBoard.jsx'
-import Error404 from './Components/Error404.jsx';
-import Forms from './Projects/Forms.jsx'
-import QRCode from './Projects/QrCode.jsx'
-import ELearningSite from './Intermediate/ELearningSite/App.jsx'
-import CustomScrollIndicator from './Projects/CustomScrolling/CustomScrollIndicator.jsx'
-
+import Stopwatch from "./Projects/StopWatch.jsx";
+import ToDoBoard from "./Projects/ToDoBoard/ToDoBoard.jsx";
+import Error404 from "./Components/Error404.jsx";
+import Forms from "./Projects/Forms.jsx";
+import QRCode from "./Projects/QrCode.jsx";
+import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
+import CustomScrollIndicator from "./Projects/CustomScrolling/CustomScrollIndicator.jsx";
+import Carousel from "./Projects/Carousel.jsx";
+import Accordion from "./Projects/Accordion.jsx";
 
 // const router = createBrowserRouter([
 //   createRoutesFromElements(
-//     <Route path="/" element={<App/>} > 
+//     <Route path="/" element={<App/>} >
 //     <Route path="projects/stopwatch" element={<Stopwatch/>} />
 //     </Route>
 //   )
 // ])
-
 
 const router = createBrowserRouter([
   {
@@ -37,7 +37,6 @@ const router = createBrowserRouter([
   {
     path: "/404",
     element: <Error404 />,
-
   },
   {
     path: "/Projects",
@@ -56,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: "qrcode",
-        element: <QRCode />
+        element: <QRCode />,
       },
 
       {
@@ -65,22 +64,31 @@ const router = createBrowserRouter([
       },
       {
         path: "custom-scrollbar",
-        element: <CustomScrollIndicator url={'https://dummyjson.com/products?limit=100'} />,
+        element: (
+          <CustomScrollIndicator
+            url={"https://dummyjson.com/products?limit=100"}
+          />
+        ),
+      },
+      {
+        path: "carousel",
+        element: <Carousel />,
+      },
+      {
+        path: "accordion",
+        element: <Accordion />,
       }
     ],
-
   },
   {
     path: "/IntermediateProjects",
     element: <Error404 />,
-    children: [
-      
-    ]
+    children: [],
   },
 ]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+  </StrictMode>
+);

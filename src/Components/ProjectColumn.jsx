@@ -63,12 +63,12 @@ const ProjectColumn = () => {
                         <ProjectButton title='WoW... nice' />
                     </Link>
 
-                    <Link className='w-52' to='#'>
-                        <ProjectButton title='TO BE COOKED' />
+                    <Link className='w-52' to='./Projects/carousel'>
+                        <ProjectButton title='Carousel' />
                     </Link>
 
-                    <Link className='w-52' to='#'>
-                        <ProjectButton title='TO BE COOKED' />
+                    <Link className='w-52' to='./Projects/accordion'>
+                        <ProjectButton title='Accordion' />
                     </Link>
 
                     <Link className='w-52' to='#'>
