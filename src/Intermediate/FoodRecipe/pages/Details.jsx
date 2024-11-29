@@ -11,7 +11,7 @@ export default function Details() {
         handleAddToFavorite,
     } = useContext(GlobalContext);
 
-    useEffect(() => {vew
+    useEffect(() => {
         async function getRecipeDetails() {
             const response = await fetch(
                 `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
@@ -30,12 +30,12 @@ export default function Details() {
     console.log(recipeDetailsData, "recipeDetailsData");
 
     return (
-        <div className="container mx-auto py-1 sm:grid sm:grid-cols-1 lg:grid-cols-2 gap-10 flex flex-col">
+        <div className="container mx-auto py-1 lg:grid  lg:grid-cols-2 gap-10 flex flex-col ">
             <div className="row-start-2 lg:row-start-auto ">
                 <div className="rounded-xl px-8 group">
                     <img
                         src={recipeDetailsData?.recipe?.image_url}
-                        className="h-96 mx-5 object-cover block rounded-2xl border-2 border-slate-900 duration-300 hover:scale-105"
+                        className="h-96 w-full object-contain block rounded-2xl border-1 border-slate-900 duration-300 hover:scale-105"
                     />
 
                     <div className="text-sm mt-4 mb-1 px-1 text-cyan-700 font-medium">

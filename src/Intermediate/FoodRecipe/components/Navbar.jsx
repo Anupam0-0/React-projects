@@ -6,9 +6,9 @@ export default function Navbar() {
     const { searchParams, setSearchParams, handleSubmit } = useContext(GlobalContext);
 
     return (
-        <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
+        <nav className="flex justify-between items-center py-6 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
             <h2 className="text-2xl font-semibold">
-                <NavLink to="/" className="text-black hover:text-gray-700 duration-300">
+                <NavLink to="/IntermediateProjects/food-recipe" className="text-black hover:text-gray-700 duration-300">
                     FoodRecipe
                 </NavLink>
             </h2>
@@ -24,12 +24,12 @@ export default function Navbar() {
             </form>
             <ul className="flex gap-5">
                 <li>
-                    <NavLink to="/" className="text-black hover:text-gray-700 duration-300">
+                    <NavLink to="/IntermediateProjects/food-recipe" className="text-black hover:text-gray-700 duration-300">
                         Home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/favourites" className="text-black hover:text-gray-700 duration-300">
+                    <NavLink to="/IntermediateProjects/food-recipe/favourites" className="text-black hover:text-gray-700 duration-300">
                         Favourites
                     </NavLink>
                 </li>

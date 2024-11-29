@@ -15,7 +15,7 @@ function Intermediate() {
                 <Link className="w-52 mr-16" to="../IntermediateProjects/food-recipe">
                     <IntermediateButton title="Food Recipe" />
                 </Link>
-                <Link className="w-52 mr-16" to="#">
+                {/* <Link className="w-52 mr-16" to="#">
                     <IntermediateButton title="E-learning" />
                 </Link>
                 <Link className="w-52 mr-16" to="#">
@@ -32,7 +32,7 @@ function Intermediate() {
                 </Link>
                 <Link className="w-52 mr-16" to="#">
                     <IntermediateButton title="E-learning" />
-                </Link>
+                </Link> */}
                 
             </div>
         </div>

@@ -54,7 +54,7 @@ const CustomScrollIndicator = ({ url }) => {
         <div className=" bg-slate-900 text-slate-50 ">
             <div className="text-center flex flex-col">
                 <div className="fixed w-full">
-                    <h1 className="text-5xl p-8 font-bold font-sans bg-green-400 ">
+                    <h1 className="text-5xl py-7 font-bold font-sans bg-gradient-to-r from-teal-400 to-gray-800 ">
                         Custom Scroll Indicator
                     </h1>
 

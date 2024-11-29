@@ -47,8 +47,8 @@ const ProjectColumn = () => {
                         <ProjectButton title='Drag n Drop' />
                     </Link>
 
-                    <Link className='w-52' to='#'>
-                        <ProjectButton title='Log in Form' />
+                    <Link className='w-52' to='./Projects/navbar'>
+                        <ProjectButton title='Navbar' />
                     </Link>
 
                     <Link className='w-52' to='#'>

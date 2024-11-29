@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { Link } from 'react-router-dom'
+
 import ProjectsColumn from './Components/ProjectColumn.jsx'
 import Intermediate from './Components/Intermediate.jsx'
 

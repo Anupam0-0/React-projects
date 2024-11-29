@@ -18,6 +18,7 @@ import QRCode from "./Projects/QrCode.jsx";
 import CustomScrollIndicator from "./Projects/CustomScrolling/CustomScrollIndicator.jsx";
 import Carousel from "./Projects/Carousel.jsx";
 import Accordion from "./Projects/Accordion.jsx";
+import NAVBARs from "./Projects/ResponsiveNavbar.jsx";
 
 import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
 // import FoodRecipe from "./Intermediate/FoodRecipe/App.jsx";
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
         element: <Forms />,
       },
       {
+        path: "navbar",
+        element: <NAVBARs />,
+      },
+      {
         path: "qrcode",
         element: <QRCode />,
       },
@@ -99,10 +104,10 @@ const router = createBrowserRouter([
             path: "",  element: (<><GlobalState> <Navbar /> <Home /> </GlobalState></>),
           },
           {
-            path: "favourites", element: (<GlobalState> <Favourites /> </GlobalState>),
+            path: "favourites", element: (<GlobalState> <Navbar /> <Favourites /> </GlobalState>),
           },
           {
-            path: "recipe-item/:id", element: (<GlobalState> <Details /> </GlobalState>),
+            path: "recipe-item/:id", element: (<GlobalState> <Navbar /> <Details /> </GlobalState>),
           }
         ]
         
