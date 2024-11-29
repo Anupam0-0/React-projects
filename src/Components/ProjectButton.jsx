@@ -18,7 +18,7 @@ const IntermediateButton = (props) => {
     return (
         <div>
             <div className=''>
-                <div className='w-72 px-1 py-1 border-2 border-slate-300 rounded text-xl flex flex-col justify-center
+                <div className='w-72 px-1 py-1 pb-2 border-2 border-slate-300 rounded text-xl flex flex-col justify-center
             hover:scale-105  transition-all duration-300 shadow-lg shadow-cyan-500/50 ' >
                     {/* hover:border-slate-200 hover:text-slate-200 */}
                     <img className='cover  ' src="https://wallpaperaccess.com/full/6923230.jpg" alt="alt" />

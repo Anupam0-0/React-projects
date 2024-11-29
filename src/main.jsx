@@ -27,6 +27,7 @@ import Home from "./Intermediate/FoodRecipe/pages/Home.jsx";
 import Favourites from "./Intermediate/FoodRecipe/pages/Favourites.jsx";
 import Details from "./Intermediate/FoodRecipe/pages/Details.jsx";
 import GlobalState from "./Intermediate/FoodRecipe/components/context.jsx";
+import EMS from "./Intermediate/EMS/EMS.jsx";
 
 
 // const router = createBrowserRouter([
@@ -110,8 +111,13 @@ const router = createBrowserRouter([
             path: "recipe-item/:id", element: (<GlobalState> <Navbar /> <Details /> </GlobalState>),
           }
         ]
-        
+
+      },
+      {
+        path: "employee-management-system",
+        element: <EMS />,
       }
+
     ],
   },
 ]);
