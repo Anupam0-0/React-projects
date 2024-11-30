@@ -9,7 +9,7 @@ const ProjectColumn = () => {
     <div className="h-full">
       <div className="mt-1">
         <h1 className="text-2xl sm:text-3xl"> Mini Projects: </h1>
-        <div className="h-[80vh] w-full lg:w-fit py-6 px-2 sm:px-7 flex flex-col flex-wrap gap-6  overflow-x-scroll lg:overflow-x-hidden">
+        <div className="h-[80vh] w-full lg:w-fit py-6 px-5 md:px-10 flex flex-col flex-wrap gap-6  overflow-x-scroll lg:overflow-x-hidden">
           <Link to="./Projects/stopwatch">
             <ProjectButton title="StopWatch" />
           </Link>
@@ -70,8 +70,8 @@ const ProjectColumn = () => {
             <ProjectButton title="Accordion" />
           </Link>
 
-          <Link to="#">
-            <ProjectButton title="TO BE COOKED" />
+          <Link to="./Projects/paragraph-geneR83R">
+            <ProjectButton title="Paragraf GenR8" />
           </Link>
 
           <Link to="#">
