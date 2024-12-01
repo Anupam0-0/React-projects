@@ -18,6 +18,8 @@ import Favourites from "../Intermediate/FoodRecipe/pages/Favourites.jsx";
 import Details from "../Intermediate/FoodRecipe/pages/Details.jsx";
 import GlobalState from "../Intermediate/FoodRecipe/components/context.jsx";
 import ParagraphGenerator from "../Projects/ParagraphGenerator.jsx";
+import Getout from "../Projects/Cat.jsx";
+import Cat from "../Projects/Cat.jsx";
 
 export const AppRoutes = () => {
   return (
@@ -40,6 +42,7 @@ export const AppRoutes = () => {
       <Route path="/Projects/accordion" element={<Accordion />} />
       <Route path="/Projects/qrcode" element={<QRCode />} />
       <Route path="/Projects/paragraph-geneR83R" element={<ParagraphGenerator />} />
+      <Route path= "/Projects/cat:3" element={<Cat />} />
 
       {/* Intermediate Projects */}
       <Route path="/IntermediateProjects/e-learning-site" element={<ELearningSite />} />

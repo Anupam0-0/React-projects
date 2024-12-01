@@ -78,8 +78,8 @@ const ProjectColumn = () => {
             <ProjectButton title="TO BE COOKED" />
           </Link>
 
-          <Link to="#">
-            <ProjectButton title="TO BE COOKED" />
+          <Link to="./Projects/cat:3">
+            <ProjectButton title="Cat :3"/>
           </Link>
         </div>
       </div>
