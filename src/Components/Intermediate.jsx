@@ -18,9 +18,10 @@ function Intermediate() {
                 <Link className="w-52 mr-16" to="../IntermediateProjects/employee-management-system">
                     <IntermediateButton title="Employee Management (EMS)" />
                 </Link>
-            {/*    <Link className="w-52 mr-16" to="#">
-                    <IntermediateButton title="E-learning" />
+               <Link className="w-52 mr-16" to="../IntermediateProjects/movie-list/">
+                    <IntermediateButton title="Movies Look up" />
                 </Link>
+                {/* 
                 <Link className="w-52 mr-16" to="#">
                     <IntermediateButton title="E-learning" />
                 </Link>

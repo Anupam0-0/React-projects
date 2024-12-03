@@ -50,11 +50,11 @@ const ProjectColumn = () => {
             <ProjectButton title="Navbar" />
           </Link>
 
-          <Link to="#">
-            <ProjectButton title="E-Commerce" />
+          <Link to="./Projects/react-hook-form">
+            <ProjectButton title="ReactHook Form" />
           </Link>
 
-          <Link to="#">
+          <Link to="./Projects/shopping-cart/product-list">
             <ProjectButton title="🛒 Checkout" />
           </Link>
 
