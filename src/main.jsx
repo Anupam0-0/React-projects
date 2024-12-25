@@ -20,23 +20,7 @@ import Carousel from "./Projects/Carousel.jsx";
 import Accordion from "./Projects/Accordion.jsx";
 import NAVBARs from "./Projects/ResponsiveNavbar.jsx";
 
-import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
-// import FoodRecipe from "./Intermediate/FoodRecipe/App.jsx";
-import Navbar from "./Intermediate/FoodRecipe/components/Navbar.jsx";
-import Home from "./Intermediate/FoodRecipe/pages/Home.jsx";
-import Favourites from "./Intermediate/FoodRecipe/pages/Favourites.jsx";
-import Details from "./Intermediate/FoodRecipe/pages/Details.jsx";
-import GlobalState from "./Intermediate/FoodRecipe/components/context.jsx";
-import EMS from "./Intermediate/EMS/EMS.jsx";
 
-
-// const router = createBrowserRouter([
-//   createRoutesFromElements(
-//     <Route path="/" element={<App/>} >
-//     <Route path="projects/stopwatch" element={<Stopwatch/>} />
-//     </Route>
-//   )
-// ])
 
 const router = createBrowserRouter([
   {
@@ -89,37 +73,7 @@ const router = createBrowserRouter([
       }
     ],
   },
-  {
-    path: "/IntermediateProjects",
-    // element: <Error404 />,
-    children: [
-      {
-        path: "e-learning-site",
-        element: <ELearningSite />,
-      },
-      {
-        path: "food-recipe",
-        // element: (<GlobalState> <Details /> </GlobalState>),
-        children: [
-          {
-            path: "",  element: (<><GlobalState> <Navbar /> <Home /> </GlobalState></>),
-          },
-          {
-            path: "favourites", element: (<GlobalState> <Navbar /> <Favourites /> </GlobalState>),
-          },
-          {
-            path: "recipe-item/:id", element: (<GlobalState> <Navbar /> <Details /> </GlobalState>),
-          }
-        ]
-
-      },
-      {
-        path: "employee-management-system",
-        element: <EMS />,
-      }
-
-    ],
-  },
+ 
 ]);
 
 createRoot(document.getElementById("root")).render(
@@ -127,3 +81,22 @@ createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </StrictMode>
 );
+
+
+
+// import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
+// // import FoodRecipe from "./Intermediate/FoodRecipe/App.jsx";
+// import Navbar from "./Intermediate/FoodRecipe/components/Navbar.jsx";
+// import Home from "./Intermediate/FoodRecipe/pages/Home.jsx";
+// import Favourites from "./Intermediate/FoodRecipe/pages/Favourites.jsx";
+// import Details from "./Intermediate/FoodRecipe/pages/Details.jsx";
+// import GlobalState from "./Intermediate/FoodRecipe/components/context.jsx";
+// import EMS from "./Intermediate/EMS/EMS.jsx";
+
+// const router = createBrowserRouter([
+//   createRoutesFromElements(
+//     <Route path="/" element={<App/>} >
+//     <Route path="projects/stopwatch" element={<Stopwatch/>} />
+//     </Route>
+//   )
+// ])

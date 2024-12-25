@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaDumbbell } from "react-icons/fa";
@@ -25,11 +24,11 @@ const NavData = [
 function Navbar1({ open, setOpen }) {
   return (
     <>
-      {" "}
-      <nav className="">
-        <div className="w-full px-12 text-lg flex justify-between items-center py-2">
+      {/* navbar 1 */}
+      <nav className="bg-slate-50 border shadow-md">
+        <div className="w-full px-24 text-lg flex justify-between items-center py-5 ">
           {/* logo section */}
-          <div className=" text-2xl flex items-center font-bold py-8">
+          <div className="text-2xl flex items-center font-bold ">
             <FaDumbbell className="" />
             <p>Coders</p>
             <p className="text-orange-300">Gym</p>
@@ -49,36 +48,28 @@ function Navbar1({ open, setOpen }) {
             </ul>
           </div>
 
-          {/* icon section
-            <div>
-              <button className='text-2xl hover:bg-orange-400 hover:text-white '></button>
-              <CiSearch className='inline-block text-2xl mr-4' />
-            </div> */}
-
           {/* mobile hamburger */}
-          <div className="md:hidden" onClick={() => setOpen(!open)}>
-            <MdMenu className="text-3xl cursor-pointer" />
+          <div className="md:hidden">
+            <MdMenu className="text-3xl cursor-pointer" onClick={() => setOpen(!open)} />
           </div>
         </div>
       </nav>
 
       {/* mobile sidebar section */}
-      {
-        open && (
-          <div className="text-xl font-semibold bg-orange-400 text-white py-10 mx-6 rounded-3xl">
-            <ul className="flex flex-col justify-center items-center gap-10">
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Contact</li>
-            </ul>
+      {open && (
+        <div className="text-xl font-semibold bg-orange-400 text-white py-10 mx-6 rounded-3xl">
+          <ul className="flex flex-col justify-center items-center gap-10">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      )}
 
-          </div>
-      )
-      }
-      
+      <br /> <hr /> <br />
 
-
+      {/* navbar2 */}
 
     </>
   );

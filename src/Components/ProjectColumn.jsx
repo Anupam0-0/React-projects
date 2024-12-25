@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ProjectButton } from "./ProjectButton";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const ProjectColumn = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div className="h-full">
       <div className="mt-1">
-        <h1 className="text-2xl sm:text-3xl"> Mini Projects: </h1>
+        <h1 className="text-2xl sm:text-3xl text-slate-200"> Mini Projects: </h1>
         <div className="h-[80vh] w-full lg:w-fit py-6 px-2 sm:px-7 flex flex-col flex-wrap gap-6  overflow-x-scroll lg:overflow-x-hidden">
           <Link to="./Projects/stopwatch">
             <ProjectButton title="StopWatch" />
