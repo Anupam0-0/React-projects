@@ -19,6 +19,7 @@ import CustomScrollIndicator from "./Projects/CustomScrolling/CustomScrollIndica
 import Carousel from "./Projects/Carousel.jsx";
 import Accordion from "./Projects/Accordion.jsx";
 import NAVBARs from "./Projects/ResponsiveNavbar.jsx";
+import Ecomm1 from "./Projects/E-comm1/App.jsx";
 
 
 
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "accordion",
         element: <Accordion />,
+      },
+      {
+        path: "E-commerce1",
+        element: <Ecomm1 />,
       }
     ],
   },
