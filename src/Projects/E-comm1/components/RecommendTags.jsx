@@ -1,8 +1,9 @@
 import React from 'react'
+import { useSearch } from '../SearchContext';
 
 function RecommendTags() {
     const tags = ["All Products", "Nike", "Adidas", "Puma", "Vans"];
-    const [selectedTag, setSelectedTag] = React.useState("");
+    const {selectedTag, setSelectedTag} = useSearch();
 
     const handleTag = (tag) => {
         setSelectedTag(tag);

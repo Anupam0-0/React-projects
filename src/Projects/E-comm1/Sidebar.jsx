@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import { useSearch } from "./SearchContext";
+
 
 const Sidebar = () => {
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedPrice, setSelectedPrice] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+ 
+  const {selectedCategory, setSelectedCategory} = useSearch();
+  const {selectedPrice, setSelectedPrice} = useSearch();
+  const {selectedColor, setSelectedColor} = useSearch();
+
   const categories = ["All", "Sneakers", "Flats", "Sandals", "Heels"];
+  const prices = ["$0 - $50", "$51 - $100", "$101 - $150", "$151 - $200", "$201+"];
+  const colors = ["Red", "Blue", "Green", "Black", "White"];
 
   return (
     <div>
@@ -35,7 +41,7 @@ const Sidebar = () => {
         <div className="pl-5 md:px-10 py-4">
           <h3 className="text-xl py-3">Price</h3>
           <ul className="px-2 list-none">
-            {["$0 - $50", "$51 - $100", "$101 - $150", "$151 - $200", "$201+"].map((priceRange) => (
+            {prices.map((priceRange) => (
               <li key={priceRange} className="text-xs md:text-base">
                 <label className="text-md">
                   <input
@@ -55,7 +61,7 @@ const Sidebar = () => {
         <div className="px-5 md:px-10 py-4">
           <h3 className="text-xl py-3">Color</h3>
           <ul className="px-2 list-none">
-            {["Red", "Blue", "Green", "Black", "White"].map((color) => (
+            {colors.map((color) => (
               <li key={color} className="text-xs md:text-base">
                 <label className="text-md">
                   <input

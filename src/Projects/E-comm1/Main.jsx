@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
 import RecommendTags from "./components/RecommendTags";
-
 import data from "./data";
-import { Key } from "react-feather";
+import { useSearch } from "./SearchContext";
+
 
 const Main = () => {
-  const [input, setInput] = useState("");
-  const [products, setProducts] = useState(data);
-
-  useEffect(() => {
-    setProducts(data);
-  }, []);
-
+  
   return (
     <>
-      <div className="w-screen md:w-full h-full bg-white flex flex-col items-center justify-center border-gray-700">
+      <div className="w-screen md:w-full h-full bg-white flex flex-col items-center justify-center border-gray-700 flex-1">
         <SearchBar />
         <RecommendTags />
-        <Products products={products} />
+        <Products />
       </div>
     </>
   );
@@ -26,30 +20,37 @@ const Main = () => {
 
 export default Main;
 
-const Products = ({ products }) => {
+
+
+
+// Compare this snippet from src/Projects/E-comm1/components/Products.jsx:
+
+const Products = () => {
+
+  const { filteredItems } = useSearch();  
+
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
-      {products.map((product)  => (
-        <div key={product.id} className="w-fit p-2 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-            <a href="#" className="flex flex-col">
+    <div className="w-full flex flex-wrap  justify-evenly ">
+      {filteredItems.map((product)  => (
+        <div key={product.id} className="w-64 mb-5 flex flex-col justify-around pt-3 px-5 py-1 bg-white border shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl shrink-0">
             <img
               src={product.img}
               alt="Product"
-              className="h-40 w-72 object-contain rounded-t-xl"
+              className="w-52 object-cover rounded-t-xl"
             />
-            <div className="px-4 py-3 w-72">
+            <div className="px-4 py-1">
               <span className="text-gray-400 mr-3 uppercase text-xs">
-                Brand
+                {product.company}
               </span>
               <p className="text-lg font-bold text-black truncate block capitalize">
-                Product Name
+                {product.title}
               </p>
               <div className="flex items-center">
                 <p className="text-lg font-semibold text-black cursor-auto my-3">
-                  $149
+                {product.prevPrice}
                 </p>
                 <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
+                  <p className="text-sm text-gray-600 cursor-auto ml-2">${product.newPrice}</p>
                 </del>
                 <div className="ml-auto">
                   <svg
@@ -69,7 +70,7 @@ const Products = ({ products }) => {
                 </div>
               </div>
             </div>
-          </a>
+          
         </div>
       ))}
     </div>
