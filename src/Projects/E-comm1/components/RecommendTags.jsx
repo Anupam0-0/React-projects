@@ -7,6 +7,7 @@ function RecommendTags() {
 
     const handleTag = (tag) => {
         setSelectedTag(tag);
+        console.log(tag);
     };
 
     return (

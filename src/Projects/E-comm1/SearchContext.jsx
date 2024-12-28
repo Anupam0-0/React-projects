@@ -1,10 +1,16 @@
-import React, { createContext, useContext, useState, useMemo, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useEffect,
+} from "react";
 import data from "./data";
 
 const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
-    //fetching data from the data.js file
+  //fetching data from the data.js file
   const [products, setProducts] = useState(data);
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,39 +23,39 @@ export const SearchProvider = ({ children }) => {
     setProducts(data);
   }, []);
 
-  const filteredData = (products, selected, query) => {
-    let filteredProducts = products;
-
-    // Filtering Input Items
-    if (query) {
-      filteredProducts = filteredProducts.filter((product) =>
-        product.title.toLowerCase().includes(query.toLowerCase())
-      );
-    }
-
-    // Applying selected filter
-    if (selected) {
-      filteredProducts = filteredProducts.filter(
-        ({ category, color, company, newPrice, title }) =>
-          category === selected ||
-          color === selected ||
-          company === selected ||
-          newPrice === selected ||
-          title === selected
-      );
-    }
-
-    return filteredProducts;
-  };
 
   const filteredItems = useMemo(() => {
-    return filteredData(products, selectedCategory, searchTerm).filter((product) => {
-      const matchesTag = !selectedTag || product.company.includes(selectedTag);
-      const matchesColor = !selectedColor || product.color === selectedColor;
-      const matchesPrice = !selectedPrice || product.newPrice <= selectedPrice;
-      return matchesTag && matchesColor && matchesPrice;
+    return products.filter((product) => {
+      const matchesSearchTerm =
+        // !searchTerm ||
+        product.title.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesTag = !selectedTag || selectedTag === 'All Products' || product.company === selectedTag;
+      
+      const matchesColor = !selectedColor ||selectedColor === 'All' ||  product.color.toLowerCase() === selectedColor.toLowerCase();
+
+      
+      const matchesPrice = !selectedPrice || selectedPrice === "All Prices" || (selectedPrice && product.newPrice >= +selectedPrice.split(" - ")[0].replace("$", "") && product.newPrice <= +selectedPrice.split(" - ")[1].replace("$", ""));
+      
+
+      const matchesCategory =
+        !selectedCategory || selectedCategory === "All"  || product.category.toLowerCase() === selectedCategory.toLowerCase();
+
+      return (
+        matchesSearchTerm &&
+        matchesTag &&
+        matchesColor &&
+        matchesPrice &&
+        matchesCategory
+      );
     });
-  }, [products, selectedCategory, selectedTag, selectedColor, selectedPrice, searchTerm]);
+  }, [
+    products,
+    searchTerm,
+    selectedTag,
+    selectedColor,
+    selectedPrice,
+    selectedCategory,
+  ]);
 
   return (
     // passing the state variables and functions to the provider value

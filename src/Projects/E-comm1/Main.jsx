@@ -31,7 +31,12 @@ const Products = () => {
 
   return (
     <div className="w-full flex flex-wrap  justify-evenly ">
-      {filteredItems.map((product)  => (
+     { filteredItems.length === 0 ? (  
+        <div className="w-full flex items-center justify-center h-96">
+          <h1 className="text-4xl font-mono text-gray-500">😔 No products found</h1>
+        </div>
+      ) : (
+        filteredItems.map((product)  => (
         <div key={product.id} className="w-64 mb-5 flex flex-col justify-around pt-3 px-5 py-1 bg-white border shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl shrink-0">
             <img
               src={product.img}
@@ -72,7 +77,7 @@ const Products = () => {
             </div>
           
         </div>
-      ))}
+      )))}
     </div>
   );
 };

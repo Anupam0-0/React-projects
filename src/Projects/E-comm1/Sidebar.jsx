@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSearch } from "./SearchContext";
+import { useNavigate } from "react-router";
 
 
 const Sidebar = () => {
@@ -9,8 +10,8 @@ const Sidebar = () => {
   const {selectedColor, setSelectedColor} = useSearch();
 
   const categories = ["All", "Sneakers", "Flats", "Sandals", "Heels"];
-  const prices = ["$0 - $50", "$51 - $100", "$101 - $150", "$151 - $200", "$201+"];
-  const colors = ["Red", "Blue", "Green", "Black", "White"];
+  const prices = ["All Prices","$0 - $50", "$51 - $100", "$101 - $150", "$151 - $200", "$201+"];
+  const colors = ["All" ,"Red", "Blue", "Green", "Black", "White"];
 
   return (
     <div>
@@ -73,6 +74,7 @@ const Sidebar = () => {
                     className="mr-2 "
                   />
                   {color} 
+                  
                 </label>
               </li>
             ))}
