@@ -20,8 +20,7 @@ import Carousel from "./Projects/Carousel.jsx";
 import Accordion from "./Projects/Accordion.jsx";
 import NAVBARs from "./Projects/ResponsiveNavbar.jsx";
 import Ecomm1 from "./Projects/E-comm1/App.jsx";
-
-
+import Quiz from "./Projects/Quiz.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +56,10 @@ const router = createBrowserRouter([
         element: <QRCode />,
       },
       {
+        path: "quiz",
+        element: <Quiz />,
+      },
+      {
         path: "custom-scrollbar",
         element: (
           <CustomScrollIndicator
@@ -75,10 +78,9 @@ const router = createBrowserRouter([
       {
         path: "E-commerce1",
         element: <Ecomm1 />,
-      }
+      },
     ],
   },
- 
 ]);
 
 createRoot(document.getElementById("root")).render(
@@ -86,8 +88,6 @@ createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </StrictMode>
 );
-
-
 
 // import ELearningSite from "./Intermediate/ELearningSite/App.jsx";
 // // import FoodRecipe from "./Intermediate/FoodRecipe/App.jsx";

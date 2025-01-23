@@ -26,8 +26,8 @@ const ProjectColumn = () => {
             <ProjectButton title="QR Generator" />
           </Link>
 
-          <Link to="404">
-            <ProjectButton title="RSS-Feed" />
+          <Link to="./Projects/quiz">
+            <ProjectButton title="Quiz App" />
           </Link>
 
           <Link to="./Projects/Forms">
